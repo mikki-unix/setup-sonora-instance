@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mysql:
+    container_name: mysql-sonora
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: urubu100
+      MYSQL_DATABASE: Sonora
+    volumes:
+      - ./dockerfiles/init-scripts/:/docker-entrypoint-initdb.d/
+      - mysql_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - rede_sonora
+
+  node:
+    container_name: webserver-sonora
+    image: node-sonora
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - rede_sonora
+
+volumes:
+  mysql_data:
+
+networks:
+  rede_sonora:
