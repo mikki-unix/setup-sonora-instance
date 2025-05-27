@@ -5,5 +5,5 @@ Este repositório contém um shell script e arquivos Docker para preparar automa
 
 Após o setup inicial da instância AWS, execute em sua instância o comando abaixo. Ele fará o clone do repositório e executará o script.
 ```bash
-git clone https://github.com/mikki-unix/setup-sonora-instance.git && cd ./setup-sonora-instance/ && ./start.sh
+git clone https://github.com/mikki-unix/setup-sonora-instance.git && cd ./setup-sonora-instance/ && sudo ./start.sh
 ```
